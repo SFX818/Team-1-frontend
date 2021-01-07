@@ -553,18 +553,28 @@ ul {
   width: auto;
   max-width: 300px;
 }
-.newsCard {
-  height: auto;
-  max-height: 400px;
-  width: auto;
-  max-width: 320px;
+.newsCard.card {
+  /* height: auto; */
+  margin: 10%;
+  height: 420px;
+  /* width: auto; */
+  width: 300px;
   text-align: center;
+  /* display: block; */
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body {
   display: block;
   justify-content: center;
   align-items: center;
 }
 
 .glow-on-hover {
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
   margin-top: 5px;
   width: 150px;
   height: 50px;

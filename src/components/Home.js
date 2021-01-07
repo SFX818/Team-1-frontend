@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getCurrentUser } from "../services/auth.service";
 import axios from "axios";
 import authHeader from "../utilities/authHeader.utilities";
-import { Card, CardDeck, Button } from 'react-bootstrap'
+import { Card, CardDeck, Button, Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Particles from "react-particles-js";
 import { ParticlesOptions } from "./ParticleOptions.js";
@@ -82,9 +82,12 @@ const Home = () => {
    <br></br>
    <h1>Take a look at the latest in Tech News:</h1>
    <br></br>
-  <CardDeck>
-  {news.map((article) =>(
-  
+   <Container>
+     
+  <CardDeck className="newsDeck">
+    <Row sm={4} md={4} xl={4} lg={4}>
+  {news.slice(-3).map((article) =>(
+  <Col sm={4} md={4} xl={4} lg={4}>
     <Card className="newsCard"> 
     <Card.Img className="newsImg" variant="top" src={article.urlToImage} />
       <Card.Body>
@@ -95,9 +98,11 @@ const Home = () => {
           </a>
       </Card.Body>
     </Card>
-    
+    </Col>
   ))}
+  </Row>
   </CardDeck>
+  </Container>
   <br></br>
   </div>;
 };
