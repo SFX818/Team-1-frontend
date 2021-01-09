@@ -86,7 +86,7 @@ const Home = () => {
      
   <CardDeck className="newsDeck">
     <Row sm={4} md={4} xl={4} lg={4}>
-  {news.slice(-3).map((article) =>(
+  {news.slice(2,5).map((article) =>(
   <Col sm={4} md={4} xl={4} lg={4}>
     <Card className="newsCard"> 
     <Card.Img className="newsImg" variant="top" src={article.urlToImage} />
