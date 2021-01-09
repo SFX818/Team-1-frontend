@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { setItem, getItem, removeItem } from '../utilities/localStorage.utilities'
 
-const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_DEV_URL_AUTH : process.env.REACT_APP_PRO_URL_AUTH;
 
 // Function to register User
 export const register = (username, email, password) => {
